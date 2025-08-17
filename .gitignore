@@ -1,0 +1,32 @@
+# Binaries
+/media-server
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Go build artifacts
+*.out
+*.test
+
+# Dependency directories
+/vendor/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+
+# Logs
+*.log
+
+# Docker
+*.env
+docker-compose.override.yml
+
+# Public / uploaded files (локальные)
+public/
