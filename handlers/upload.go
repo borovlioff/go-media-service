@@ -60,6 +60,6 @@ func UploadFile(cfg config.Config) gin.HandlerFunc {
 			return
 		}
 
-		c.JSON(http.StatusOK, gin.H{"file": "/public/" + newName})
+		c.JSON(http.StatusOK, gin.H{"file":  newName})
 	}
 }
