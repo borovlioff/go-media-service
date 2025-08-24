@@ -1,0 +1,34 @@
+# Исключаем git и метаданные
+.git
+.gitignore
+.dockerignore
+
+# IDE / редакторы
+.vscode
+.idea
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Go build cache
+*.out
+*.test
+
+# Бинарные файлы (собираются внутри контейнера)
+media-server
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Логи
+*.log
+
+# Docker локальные файлы
+docker-compose.override.yml
+*.env
+
+# Public / локальные загруженные файлы
+public/
