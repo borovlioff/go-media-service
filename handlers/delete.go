@@ -1,11 +1,12 @@
 package handlers
 
 import (
-	"github.com/gin-gonic/gin"
 	"media-server/config"
 	"net/http"
 	"os"
 	"path/filepath"
+
+	"github.com/gin-gonic/gin"
 )
 
 func DeleteFile(cfg config.Config) gin.HandlerFunc {
@@ -30,6 +31,6 @@ func DeleteFile(cfg config.Config) gin.HandlerFunc {
 			return
 		}
 
-		c.JSON(http.StatusOK, gin.H{"deleted": true, "file": "/public/" + cleanName})
+		c.JSON(http.StatusOK, gin.H{"deleted": true, "file": cleanName})
 	}
 }

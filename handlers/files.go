@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"github.com/gin-gonic/gin"
 	"media-server/config"
 	"net/http"
 	"os"
@@ -10,6 +9,8 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+
+	"github.com/gin-gonic/gin"
 )
 
 func ListFiles(cfg config.Config) gin.HandlerFunc {
@@ -58,7 +59,7 @@ func ListFiles(cfg config.Config) gin.HandlerFunc {
 
 		list := []string{}
 		for _, name := range filtered[start:end] {
-			list = append(list, "/public/"+filepath.Base(name))
+			list = append(list, filepath.Base(name))
 		}
 
 		c.JSON(http.StatusOK, gin.H{
