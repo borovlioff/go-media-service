@@ -26,6 +26,8 @@ COPY --from=builder /app/media-server .
 
 # Переменные окружения по умолчанию
 ENV UPLOAD_DIR=/app/public
+ENV PublicPath=/public
+ENV DOMAIN=http://localhost
 ENV PORT=8080
 ENV PAGE_LIMIT=20
 ENV FILE_MAX_SIZE=104857600
