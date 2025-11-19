@@ -8,11 +8,13 @@ import (
 
 type Config struct {
 	UploadDir    string
+	PublicPath   string
 	Port         string
 	PageLimit    int
 	FileMaxSize  int64
 	FileFilter   string
 	AllowedMIMEs map[string]bool
+	Domain       string
 }
 
 func Load() Config {
@@ -32,10 +34,12 @@ func Load() Config {
 
 	return Config{
 		UploadDir:    utils.GetEnv("UPLOAD_DIR", "./public"),
+		PublicPath:   utils.GetEnv("PUBLIC_PATH", "/public"),
 		Port:         utils.GetEnv("PORT", "8080"),
 		PageLimit:    pageLimit,
 		FileMaxSize:  fileMaxSize,
 		FileFilter:   utils.GetEnv("FILE_FILTER", ".*"),
 		AllowedMIMEs: mimes,
+		Domain:       utils.GetEnv("DOMAIN", ""),
 	}
 }
